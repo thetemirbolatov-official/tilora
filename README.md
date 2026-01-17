@@ -17,7 +17,7 @@
 - **Статус:** Готов к выпуску
 
 ### Как скачать
-1. **Прямая ссылка:** ([ссылка будет добавлена перед выпуском](https://github.com/thetemirbolatov-official/tilora/releases/download/v1.0.0/tilora.rar))
+1. **Прямая ссылка:** ([Скачать Tilora](https://github.com/thetemirbolatov-official/tilora/releases/download/v1.0.0/tilora.rar))
 
 ## 🚀 Установка и запуск
 
