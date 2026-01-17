@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status](https://img.shields.io/badge/status-Ready%20for%20Release-brightgreen.svg)](https://github.com/thetemirbolatov-official/tilora)
 
-**Десктопный переводчик карачаевского языка. Работает полностью оффлайн.**
+**Десктопный переводчик карачаевского языка. Работает онлайн.**
 
 > ⚠️ **Внимание:** Этот файл TILORA.exe является первоначальной версией приложения. Для скачивания других версий (macOS, iOS, Android) следите за обновлениями.
 
