@@ -117,7 +117,7 @@ C:\Program Files\TILORA\
 ### Контакты разработчика
 - **Telegram:** [@thetemirbolatov](https://t.me/thetemirbolatov)
 - **Instagram:** [@thetemirbolatov](https://instagram.com/thetemirbolatov)
-- **GitHub:** [@thetemirbolatov](https://github.com/thetemirbolatov)
+- **GitHub:** [@thetemirbolatov](https://github.com/thetemirbolatov-official)
 - **Email:**  mirajestory@gmail.com
 
 ## 🔄 Обновления
