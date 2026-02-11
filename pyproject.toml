@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tilora"
+version = "1.0.0"
+description = "🗣️ Двусторонний переводчик карачаевского и русского языков"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "thetemirbolatov", email = "mirajestory@gmail.com"},
+]
+keywords = ["karachay", "russian", "translator", "ocr", "dictionary", "caucasian"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.urls]
+Homepage = "https://github.com/thetemirbolatov-official/tilora"
+Telegram = "https://t.me/thetemirbolatov"
+Repository = "https://github.com/thetemirbolatov-official/tilora"
+
+[project.optional-dependencies]
+ocr = ["pytesseract>=0.3.10"]
+full = ["pytesseract>=0.3.10", "Pillow>=9.0.0"]
+
+[tool.setuptools]
+py-modules = ["tilora"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["data/words.json"]
