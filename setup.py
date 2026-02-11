@@ -4,7 +4,7 @@ setup.py - Установка библиотеки tilora
 Автор: Temirbolatov (@thetemirbolatov)
 """
 
-from setuptools import setup
+from setuptools import setup, find_packages
 import os
 
 # Читаем README.md
@@ -26,11 +26,16 @@ setup(
     url="https://github.com/thetemirbolatov-official/tilora",
     license="MIT",
     
-    # Файлы
-    py_modules=["tilora"],
+    # ВАЖНО: Находим все пакеты, включая data
+    packages=find_packages(include=['tilora', 'tilora.*']),
+    
+    # Включаем не-python файлы
     include_package_data=True,
+    
+    # ЯВНО указываем, какие файлы включить
     package_data={
-        "": ["data/words.json"],
+        "tilora": ["data/words.json"],  # Файл словаря
+        "": ["*.md", "*.txt"],          # Документация
     },
     
     # Зависимости
@@ -43,6 +48,17 @@ setup(
     extras_require={
         "ocr": [
             "pytesseract>=0.3.10",
+        ],
+        "full": [
+            "pytesseract>=0.3.10",
+            "Pillow>=9.0.0",
+        ],
+    },
+    
+    # Точка входа для консольной команды (опционально)
+    entry_points={
+        "console_scripts": [
+            "tilora=tilora.cli:main",
         ],
     },
     
