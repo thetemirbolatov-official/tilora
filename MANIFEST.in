@@ -1,0 +1,10 @@
+# Включаем словарь
+include data/words.json
+
+# Включаем документацию
+include README.md
+include LICENSE
+include *.txt
+
+# Убеждаемся что JSON точно попадёт в сборку
+recursive-include data *.json
