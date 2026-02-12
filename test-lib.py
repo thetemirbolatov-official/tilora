@@ -15,4 +15,5 @@ print(result.translated_text)
 # Пакетный перевод
 results = client.translate_batch(["привет", "пока"])
 for r in results:
+
     print(f"{r.original_text} → {r.translated_text}")
