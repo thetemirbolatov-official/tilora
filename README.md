@@ -1,7 +1,7 @@
 # TILO.RA — Карачаевско-русский переводчик
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/thetemirbolatov-official/tilora/main/assets/logo.png" alt="TILO.RA Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/thetemirbolatov-official/tilora/main/logo.ico" alt="TILO.RA Logo" width="200"/>
 </p>
 
 <p align="center">
