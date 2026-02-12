@@ -5,7 +5,7 @@ setup.py - Tilora Карачаевский переводчик
 Лицензия: MIT
 """
 
-from setuptools import setup, find_packages
+from setuptools import setup
 import os
 
 # Читаем README.md
@@ -24,15 +24,13 @@ setup(
     url="https://github.com/thetemirbolatov-official/tilora",
     license="MIT",
     
-    # ========== ВАЖНО! ВАШ КОД БЕЗ ИЗМЕНЕНИЙ ==========
-    # find_packages() найдет ВСЕ папки с __init__.py
-    # У вас пока нет папки tilora/, поэтому используем py_modules
-    py_modules=["tilora"],  # ВАШ ФАЙЛ tilora.py БУДЕТ ПАКЕТОМ
+    # ========== ВАЖНО! ВАШ КАК ОДИН ФАЙЛ ==========
+    py_modules=["tilora"],  # Вместо packages=find_packages()
     
     # ========== ВКЛЮЧАЕМ JSON ФАЙЛЫ ==========
     include_package_data=True,
     package_data={
-        "": ["data/*.json", "data/**/*.json"],  # Включаем все JSON из data
+        "": ["data/*.json", "data/**/*.json"],
     },
     
     # ========== ЗАВИСИМОСТИ ==========
@@ -84,27 +82,12 @@ setup(
     
     # ========== КЛЮЧЕВЫЕ СЛОВА ==========
     keywords=[
-        "karachay",
-        "karachay-balkar",
-        "russian",
-        "translator",
-        "translation",
-        "dictionary",
-        "ocr",
-        "tesseract",
-        "natural-language-processing",
-        "nlp",
-        "caucasian-languages",
-        "turkkic-languages",
-        "karachay-language",
-        "tilora",
-        "карачаевский",
-        "переводчик",
-        "къарачай",
-        "til",
-        "ora",
+        "karachay", "karachay-balkar", "russian", "translator",
+        "translation", "dictionary", "ocr", "tesseract",
+        "natural-language-processing", "nlp", "caucasian-languages",
+        "turkkic-languages", "karachay-language", "tilora",
+        "карачаевский", "переводчик", "къарачай", "til", "ora",
     ],
     
-    # ========== ДОПОЛНИТЕЛЬНО ==========
     zip_safe=False,
 )
