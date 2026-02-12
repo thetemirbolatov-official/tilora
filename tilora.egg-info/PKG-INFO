@@ -1,18 +1,25 @@
 Metadata-Version: 2.4
 Name: tilora
 Version: 1.0.0
-Summary: 🗣️ Двусторонний переводчик карачаевского и русского языков
+Summary: Официальная библиотека API tilora.ru для перевода с/на карачаевский язык
 Home-page: https://github.com/thetemirbolatov-official/tilora
 Author: thetemirbolatov
-Author-email: thetemirbolatov <mirajestory@gmail.com>
+Author-email: mirajestory@gmail.com
 License: MIT
-Project-URL: Homepage, https://github.com/thetemirbolatov-official/tilora
-Project-URL: Telegram, https://t.me/thetemirbolatov
-Project-URL: Repository, https://github.com/thetemirbolatov-official/tilora
-Keywords: karachay,russian,translator,ocr,dictionary,caucasian
-Classifier: Development Status :: 5 - Production/Stable
+Project-URL: Документация, https://tilora.ru/api.html
+Project-URL: Исходный код, https://github.com/thetemirbolatov-official/tilora
+Project-URL: Баг-трекер, https://github.com/thetemirbolatov-official/tilora/issues
+Project-URL: Автор (ВКонтакте), https://vk.com/thetemirbolatov
+Project-URL: Автор (Instagram), https://instagram.com/thetemirbolatov
+Project-URL: Автор (Telegram), https://t.me/thetemirbolatov
+Project-URL: Сайт проекта, https://tilora.ru
+Keywords: karachay,russian,translation,ocr,nlp,api,tilora,карачаевский,перевод,распознавание
+Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
 Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Russian
+Classifier: Natural Language :: Karachay-Balkar
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.7
@@ -22,20 +29,38 @@ Classifier: Programming Language :: Python :: 3.10
 Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Provides-Extra: ocr
-Requires-Dist: pytesseract>=0.3.10; extra == "ocr"
-Provides-Extra: full
-Requires-Dist: pytesseract>=0.3.10; extra == "full"
-Requires-Dist: Pillow>=9.0.0; extra == "full"
+Requires-Dist: requests>=2.28.0
+Requires-Dist: Pillow>=9.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=5.0.0; extra == "dev"
+Requires-Dist: mypy>=0.990; extra == "dev"
+Requires-Dist: build>=0.9.0; extra == "dev"
+Requires-Dist: twine>=4.0.0; extra == "dev"
 Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
 Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
 Dynamic: license-file
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
 Dynamic: requires-python
+Dynamic: summary
 
-# TILO.RA
+﻿# TILO.RA
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/thetemirbolatov-official/tilora/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -556,3 +581,4 @@ Copyright (c) 2024 Temirbolatov
 
 
 Сделано для карачаевского языка
+

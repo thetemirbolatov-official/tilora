@@ -1,13 +1,18 @@
-from tilora import KarachayTranslator, translate, detect_language, translate_image
+﻿from tilora import TiloClient, translate, translate_image
 
-# Простой перевод
-print(translate("привет"))  # салам
+# Вариант 1: Класс-клиент (рекомендуется)
+client = TiloClient()
+result = client.translate("привет как дела")
+print(result.translated_text)  # салам къалайса
+
+# Вариант 2: Быстрые функции
+print(translate("спасибо"))  # сау бол
 
 # Перевод с фото
-text = translate_image("photo.jpg")
-print(f"Перевод с фото: {text}")
+result = client.translate_image("photo.jpg")
+print(result.translated_text)
 
-# Расширенный перевод
-tr = KarachayTranslator()
-result = tr.translate("доброе утро", return_details=True)
-print(f"{result.translated_text} ({result.confidence:.0%})")
+# Пакетный перевод
+results = client.translate_batch(["привет", "пока"])
+for r in results:
+    print(f"{r.original_text} → {r.translated_text}")

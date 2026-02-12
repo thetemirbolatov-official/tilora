@@ -1,13 +1,11 @@
 LICENSE
-MANIFEST.in
 README.md
-pyproject.toml
 setup.py
 tilora.py
-data/words.json
 tilora.egg-info/PKG-INFO
 tilora.egg-info/SOURCES.txt
 tilora.egg-info/dependency_links.txt
+tilora.egg-info/entry_points.txt
 tilora.egg-info/not-zip-safe
 tilora.egg-info/requires.txt
 tilora.egg-info/top_level.txt
