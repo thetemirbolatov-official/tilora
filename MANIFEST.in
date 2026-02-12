@@ -1,0 +1,32 @@
+# Включаем все необходимые файлы
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+include setup.cfg
+
+# Включаем папку с данными
+recursive-include tilora/data *.json
+recursive-include tilora/data *.md
+
+# Включаем тесты
+recursive-include tests *.py
+
+# Включаем примеры
+recursive-include examples *.py
+
+# Включаем документацию
+recursive-include docs *.md
+
+# Исключаем ненужные файлы
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .git
+global-exclude .github
+global-exclude .vscode
+global-exclude .idea
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude *.so
+global-exclude *.dll
+global-exclude *.exe
