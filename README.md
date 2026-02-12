@@ -45,7 +45,7 @@
 **TILO.RA Desktop** — элегантный, минималистичный переводчик для Windows с тёмной темой и полным функционалом.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/thetemirbolatov-official/tilora/main/screenshot.png" alt="TILO.RA Desktop Screenshot" width="600"/>
+  <img src="https://raw.githubusercontent.com/thetemirbolatov-official/tilora/main/screenshot.jpg" alt="TILO.RA Desktop Screenshot" width="600"/>
 </p>
 
 ## ✨ Возможности десктоп-версии
