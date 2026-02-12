@@ -3,16 +3,14 @@ name: Publish to PyPI
 on:
   push:
     tags:
-      - 'v*'  # Запуск при создании тега v1.0.0, v1.0.1 и т.д.
-  workflow_dispatch:  # Ручной запуск
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   build-and-publish:
-    name: Build and publish to PyPI
     runs-on: ubuntu-latest
     permissions:
-      id-token: write  # КРИТИЧЕСКИ ВАЖНО для Trusted Publisher!
-      contents: write  # Для создания Release
+      id-token: write  # Важно для Trusted Publisher
     
     steps:
     - uses: actions/checkout@v4
@@ -20,85 +18,16 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.10'
     
-    - name: Install build dependencies
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build twine
+        pip install build
     
     - name: Build package
-      run: |
-        python -m build
-        echo "✅ Пакеты собраны:"
-        ls -la dist/
-    
-    - name: Verify package
-      run: |
-        twine check dist/*
-        echo "✅ Пакеты прошли проверку"
+      run: python -m build
     
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
-      # Trusted Publisher - НИКАКОГО ТОКЕНА НЕ НУЖНО!
-      # Всё работает через OIDC аутентификацию
-    
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        name: tilora ${{ github.ref_name }}
-        body: |
-          ## 🎉 tilora v${{ github.ref_name }}
-          
-          Официальная библиотека API [tilora.ru](https://tilora.ru)
-          
-          ### 📦 Установка
-          ```bash
-          pip install tilora==${{ github.ref_name }}
-          ```
-          
-          ### ✨ Возможности
-          - Перевод текста (русский ↔ карачаевский)
-          - Пакетный перевод до 50 текстов
-          - Автоматическое определение языка
-          - OCR и перевод с изображений
-          - Кэширование запросов
-          
-          ### 🔧 Быстрый старт
-          ```python
-          from tilora import translate
-          
-          # Перевод с русского на карачаевский
-          result = translate("привет как дела")
-          print(result)  # салам къалайса
-          
-          # Перевод с карачаевского на русский
-          result = translate("салам", target_lang="ru")
-          print(result)  # привет
-          ```
-          
-          ### 👨‍💻 Автор: **thetemirbolatov**
-          
-          | Социальная сеть | Ссылка |
-          |----------------|--------|
-          | 📱 ВКонтакте | [@thetemirbolatov](https://vk.com/thetemirbolatov) |
-          | 📸 Instagram | [@thetemirbolatov](https://instagram.com/thetemirbolatov) |
-          | ✈️ Telegram | [@thetemirbolatov](https://t.me/thetemirbolatov) |
-          | 💻 GitHub | [@thetemirbolatov-official](https://github.com/thetemirbolatov-official) |
-          
-          ### 📄 Документация
-          Полная документация: [tilora.ru/api.html](https://tilora.ru/api.html)
-          
-          ### 📥 Скачать
-          - [tilora-${{ github.ref_name }}.tar.gz](${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/tilora-${{ github.ref_name }}.tar.gz)
-          - [tilora-${{ github.ref_name }}-py3-none-any.whl](${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/tilora-${{ github.ref_name }}-py3-none-any.whl)
-          
-          ---
-          📝 **Лицензия**: MIT
-          
-          🔗 **Проект**: [tilora.ru](https://tilora.ru)
-        files: dist/*
-        draft: false
-        prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # ТОКЕН НЕ НУЖЕН - Trusted Publisher работает автоматически!
