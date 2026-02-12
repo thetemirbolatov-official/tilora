@@ -1,6 +1,6 @@
 """
 setup.py - Tilora Карачаевский переводчик
-Версия: 1.0.0
+Версия: 1.0.1
 Автор: Temirbolatov (@thetemirbolatov)
 Лицензия: MIT
 """
@@ -15,7 +15,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 setup(
     # ========== ОСНОВНАЯ ИНФОРМАЦИЯ ==========
     name="tilora",
-    version="1.0.0",
+    version="1.0.1",
     author="thetemirbolatov",
     author_email="mirajestory@gmail.com",
     description="🗣️ Двусторонний переводчик карачаевского и русского языков с поддержкой OCR",
