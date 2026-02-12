@@ -24,15 +24,15 @@ setup(
     url="https://github.com/thetemirbolatov-official/tilora",
     license="MIT",
     
-    # ========== ВАЖНО! ПАКЕТЫ И ДАННЫЕ ==========
-    # Находим все пакеты
-    packages=find_packages(),
+    # ========== ВАЖНО! ВАШ КОД БЕЗ ИЗМЕНЕНИЙ ==========
+    # find_packages() найдет ВСЕ папки с __init__.py
+    # У вас пока нет папки tilora/, поэтому используем py_modules
+    py_modules=["tilora"],  # ВАШ ФАЙЛ tilora.py БУДЕТ ПАКЕТОМ
     
-    # Включаем файлы из data/
+    # ========== ВКЛЮЧАЕМ JSON ФАЙЛЫ ==========
     include_package_data=True,
     package_data={
-        "tilora": ["data/*.json", "data/**/*.json"],  # Явно указываем JSON файлы
-        "": ["data/*.json"],  # Запасной вариант
+        "": ["data/*.json", "data/**/*.json"],  # Включаем все JSON из data
     },
     
     # ========== ЗАВИСИМОСТИ ==========
@@ -44,9 +44,13 @@ setup(
         "ocr": [
             "pytesseract>=0.3.10",
         ],
+        "full": [
+            "pytesseract>=0.3.10",
+            "Pillow>=9.0.0",
+        ],
     },
     
-    # ========== ВСЕ СОЦИАЛЬНЫЕ СЕТИ ==========
+    # ========== ВАШИ СОЦСЕТИ ==========
     project_urls={
         "GitHub": "https://github.com/thetemirbolatov-official/tilora",
         "PyPI": "https://pypi.org/project/tilora/",
@@ -63,12 +67,8 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
-        "Intended Audience :: Science/Research",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Operating System :: Microsoft :: Windows",
-        "Operating System :: POSIX :: Linux",
-        "Operating System :: MacOS :: MacOS X",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
@@ -77,7 +77,6 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Topic :: Text Processing :: Linguistic",
-        "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Natural Language :: Russian",
         "Natural Language :: Karachay",
         "Typing :: Typed",
@@ -108,5 +107,4 @@ setup(
     
     # ========== ДОПОЛНИТЕЛЬНО ==========
     zip_safe=False,
-    include_package_data=True,
 )
