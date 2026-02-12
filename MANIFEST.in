@@ -1,15 +1,10 @@
 # MANIFEST.in - Включаем папку data в пакет
 
 # ЯВНО ВКЛЮЧАЕМ ВСЕ JSON ФАЙЛЫ ИЗ DATA
-recursive-include tilora/data *.json
-include tilora/data/*.json
-include tilora/data/**/*.json
-
-# Если файл в корне (запасной вариант)
-include data/*.json
 recursive-include data *.json
+include data/*.json
+include data/**/*.json
 
-# Включаем документацию
+# Документация
 include README.md
 include LICENSE
-include requirements.txt
